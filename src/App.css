@@ -112,3 +112,7 @@ a{
 .topban{
   padding: 100px 0px;
 }
+
+.error{
+  color: red;
+}

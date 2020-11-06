@@ -1,7 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function Contact(props) {
 
+  const [thankuMessage, SetThankuMessage] = useState(false);
+
+  function formsubmit(e) {
+    e.preventDefault();
+            SetThankuMessage(true);
+              setTimeout(() => {
+                SetThankuMessage(false);
+              }, 3000);
+  
+      e.target.reset();
+  }
 
   return(
     <>
@@ -22,9 +33,10 @@ function Contact(props) {
         <div className="row">
         <div className="col-lg-6 col-md-12 pt-3">
         <h2>Get in Touch</h2>
-        <form action="form-action-contact.php" method="post">
+   
+        <form onSubmit={formsubmit}>
                   <div className="form-group">
-                    <input type="text" className="form-control"  name="fname" id="fname" placeholder="Your Name" required/>
+                    <input type="text" className="form-control"  name="name" id="name" placeholder="Your Name" required/>
                   </div>
                   <div className="form-group">
                     <input type="email" className="form-control" name="email" id="email" placeholder="Your Email Address" required/>
@@ -33,7 +45,7 @@ function Contact(props) {
                     <input type="text" className="form-control" maxlength="10" pattern="[789][0-9]{9}" name="mobile" id="mobile" placeholder="Your Mobile Number" required/>
                   </div>
                   <div className="form-group">
-                    <input type="text" className="form-control" maxlength="50" name="city" id="city" placeholder="Your City"/>
+                    <input type="text" className="form-control" maxlength="50" name="city" id="city" placeholder="Your City" required/>
                   </div>
                   <div className="form-group"><textarea className="form-control" placeholder="Your Message" id="exampleFormControlTextarea1" rows="3" maxlength="90" name="message"></textarea>
                   </div>
@@ -41,8 +53,9 @@ function Contact(props) {
                   <div className="form-group"><input type="text" className="form-control" name="code" placeholder="" required/>
                   </div>
                   <div className="submit-button">
-                      <button className="button web-btn" id="form-submit" type="submit">Send Message</button>
+                      <button className="button web-btn" id="form-submit" name="submit" type="submit">Send Message</button>
                   </div>
+                  {thankuMessage ? <span className="text-success text-center my-2">"Thank you for contacting us!"</span> : null}
               </form>
           </div>
           <div className="col-lg-6 col-md-12 pt-3">
@@ -70,5 +83,6 @@ function Contact(props) {
   );
 
 }
+
 
 export default Contact;
