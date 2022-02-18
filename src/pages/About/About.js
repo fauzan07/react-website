@@ -1,12 +1,20 @@
 import React from 'react';
 import still from '../../assets/still-life-1.jpg';
 import {Link} from "react-router-dom";
+import {Helmet} from "react-helmet";
+
 
 function About(props) {
 
 
   return(
     <>
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Morgan About</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+        <meta name="description" content="About page application" />
+    </Helmet>
     <section className="topbanner text-white bg-dark-overlay">
       <div className="container-fluid">
         <div className="row">

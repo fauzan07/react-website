@@ -8,12 +8,20 @@ import project3 from '../../assets/project-3.jpg';
 import project4 from '../../assets/project-4.jpg';
 import project5 from '../../assets/project-5.jpg';
 import project6 from '../../assets/project-6.jpg';
+import {Helmet} from "react-helmet";
+
 
 function Home(props) {
 
 
   return(
     <>
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Morgan Home</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+        <meta name="description" content="Home page application" />
+    </Helmet>
   <section className="banner bg-dark-overlay">
     <div className="container-fluid">
       <div className="row">

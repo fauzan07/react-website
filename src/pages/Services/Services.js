@@ -5,6 +5,8 @@ import portrait3 from '../../assets/portrait-3.jpg';
 import portrait4 from '../../assets/portrait-4.jpg';
 import portrait5 from '../../assets/portrait-5.jpg';
 import {Link} from "react-router-dom";
+import {Helmet} from "react-helmet";
+
 
 
 function Services(props) {
@@ -12,6 +14,12 @@ function Services(props) {
 
   return(
     <>
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Morgan Services</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+        <meta name="description" content="Services page application" />
+    </Helmet>
   <section className="topbanner text-white bg-dark-overlay">
     <div className="container-fluid">
       <div className="row">

@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {Helmet} from "react-helmet";
+
 
 function Contact(props) {
 
@@ -16,6 +18,12 @@ function Contact(props) {
 
   return(
     <>
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Morgan Contact</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+        <meta name="description" content="Contact page application" />
+    </Helmet>
     <section className="topbanner text-white bg-dark-overlay">
       <div className="container-fluid">
         <div className="row">
